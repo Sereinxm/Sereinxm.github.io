@@ -6,6 +6,9 @@
 - type: twitter
   icon: "fab fa-twitter"
 
+- type: bilibili
+  icon: "fab fa-bilibili"
+
 - type: email
   icon: "fas fa-envelope"
   noblank: true # open link in current tab

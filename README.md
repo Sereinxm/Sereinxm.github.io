@@ -1,45 +1,53 @@
-# Chirpy Starter [![Gem Version](https://img.shields.io/gem/v/jekyll-theme-chirpy)](https://rubygems.org/gems/jekyll-theme-chirpy) [![GitHub license](https://img.shields.io/github/license/cotes2020/chirpy-starter.svg?color=blue)][mit]
+draft      # Creates a new draft post with the given NAME
+post       # Creates a new post with the given NAME
+publish    # Moves a draft into the _posts directory and sets the date
+unpublish  # Moves a post back into the _drafts directory
+page       # Creates a new page with the given NAME
+rename     # Moves a draft to a given NAME and sets the title
+compose    # Creates a new file with the given NAME
+使用以下方法创建新页面：
 
-When installing the [**Chirpy**][chirpy] theme through [RubyGems.org][gem], Jekyll can only read files in the folders `/_data`, `/_layouts`, `/_includes`, `/_sass` and `/assets`, as well as a small part of options of the `/_config.yml` file from the theme's gem. If you have ever installed this theme gem, you can use the command `bundle info --path jekyll-theme-chirpy` to locate these files.
+    $ bundle exec jekyll page "My New Page"
+使用以下方法创建新帖子：
 
-The Jekyll team claims that this is to leave the ball in the user’s court, but this also results in users not being able to enjoy the out-of-the-box experience when using feature-rich themes.
+    $ bundle exec jekyll post "My New Post"
+    # or specify a custom format for the date attribute in the yaml front matter
+    $ bundle exec jekyll post "My New Post" --timestamp-format "%Y-%m-%d %H:%M:%S %z"
+    # or by using the compose command
+    $ bundle exec jekyll compose "My New Post"
+    # or by using the compose command with post specified
+    $ bundle exec jekyll compose "My New Post" --post
+    # or by using the compose command with the posts collection specified
+    $ bundle exec jekyll compose "My New Post" --collection "posts"
+使用以下方法创建新草稿：
 
-To fully use all the features of **Chirpy**, you need to copy the other critical files from the theme's gem to your Jekyll site. The following is a list of targets:
+    $ bundle exec jekyll draft "My new draft"
+    # or by using the compose command with draft specified
+    $ bundle exec jekyll compose "My new draft" --draft
+    # or by using the compose command with the drafts collection specified
+    $ bundle exec jekyll compose "My new draft" --collection "drafts"
+使用以下方法重命名草稿：
 
-```shell
-.
-├── _config.yml
-├── _plugins
-├── _tabs
-└── index.html
-```
+$ bundle exec jekyll rename _drafts/my-new-draft.md "My Renamed Draft"
+# or rename it back
+$ bundle exec jekyll rename _drafts/my-renamed-draft.md "My new draft"
+使用以下方法发布草稿：
 
-To save you time, and also in case you lose some files while copying, we extract those files/configurations of the latest version of the **Chirpy** theme and the [CD][CD] workflow to here, so that you can start writing in minutes.
+    $ bundle exec jekyll publish _drafts/my-new-draft.md
+    # or specify a specific date on which to publish it
+    $ bundle exec jekyll publish _drafts/my-new-draft.md --date 2014-01-24
+    # or specify a custom format for the date attribute in the yaml front matter
+    $ bundle exec jekyll publish _drafts/my-new-draft.md --timestamp-format "%Y-%m-%d %H:%M:%S %z"
+使用以下方法重命名您的帖子：
 
-## Prerequisites
+$ bundle exec jekyll rename _posts/2014-01-24-my-new-draft.md "My New Post"
+# or specify a specific date
+$ bundle exec jekyll rename _posts/2014-01-24-my-new-post.md "My Old Post" --date "2012-03-04"
+# or specify the current date
+$ bundle exec jekyll rename _posts/2012-03-04-my-old-post.md "My New Post" --now
+使用以下方法取消发布帖子：
 
-Follow the instructions in the [Jekyll Docs](https://jekyllrb.com/docs/installation/) to complete the installation of the basic environment. [Git](https://git-scm.com/) also needs to be installed.
+    $ bundle exec jekyll unpublish _posts/2014-01-24-my-new-draft.md
+使用以下方法在集合中创建新文件：
 
-## Installation
-
-Sign in to GitHub and [**use this template**][use-template] to generate a brand new repository and name it `USERNAME.github.io`, where `USERNAME` represents your GitHub username.
-
-Then clone it to your local machine and run:
-
-```
-$ bundle
-```
-
-## Usage
-
-Please see the [theme's docs](https://github.com/cotes2020/jekyll-theme-chirpy#documentation).
-
-## License
-
-This work is published under [MIT][mit] License.
-
-[gem]: https://rubygems.org/gems/jekyll-theme-chirpy
-[chirpy]: https://github.com/cotes2020/jekyll-theme-chirpy/
-[use-template]: https://github.com/cotes2020/chirpy-starter/generate
-[CD]: https://en.wikipedia.org/wiki/Continuous_deployment
-[mit]: https://github.com/cotes2020/chirpy-starter/blob/master/LICENSE
+    $ bundle exec jekyll compose "My New Thing" --collection "things"
