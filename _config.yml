@@ -77,7 +77,7 @@ theme_mode: # light
 # will be added to all image (site avatar & posts' images) paths starting with '/'
 #
 # e.g. 'https://cdn.com'
-img_cdn:
+#img_cdn: 'https://i.imgtg.com'
 
 # the avatar on sidebar, support local or CORS resources
 avatar: /avatar.png
