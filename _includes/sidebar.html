@@ -73,8 +73,8 @@
     {%- capture url -%}
     javascript:location.href = 'mailto:' + ['{{ email[0] }}','{{ email[1] }}'].join('@')
     {%- endcapture -%}
-    {% when 'rss' %}
-    {% assign url = '/feed.xml' | relative_url %}
+    {% when 'weixin' %}
+    {% assign url = '/myweixin.jpg' | relative_url %}
     {% else %}
     {% assign url = entry.url %}
     {% endcase %}

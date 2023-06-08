@@ -16,6 +16,10 @@
 - type: rss
   icon: "fas fa-rss"
   noblank: true
+
+- type: weixin
+  icon: "fa-brands fa-weixin"
+  noblank: true
 # Uncomment and complete the url below to enable more contact options
 #
 # - type: mastodon
