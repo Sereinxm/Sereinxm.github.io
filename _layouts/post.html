@@ -116,15 +116,16 @@ tail_includes:
       {{- tag -}}
     </a>
     {% endfor %}
-<!--    {% include waline.html %}-->
+
   </div>
   {% endif %}
 
-
-
-      <div class="container">
+  {% if page.comments=ture %}
+  <div class="container">
     {% include waline.html %}
-      </div>
+  </div>
+  {% endif %}
+
 
 
 
