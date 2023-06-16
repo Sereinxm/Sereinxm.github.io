@@ -23,8 +23,8 @@
 
   {% capture seo_tags %}
   {% if page.layout == 'post' %}
-  {% if site.valine.comments and page.comments %}
-  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  {% if site.waline.comments and page.comments %}
+  <script src="https://unpkg.com/@waline/client@v2/dist/waline.mjs"></script>
   {% endif %}
   {% endif %}
     {% seo title=false %}

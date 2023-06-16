@@ -92,17 +92,7 @@ tail_includes:
 <div class="post-content">
   {{ content }}
 </div>
-<div id="post-extend-wrapper" class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4">
 
-  {% include related-posts.html %}
-
-  {% include post-nav.html %}
-
-  {% if site.valine.comments and page.comments %}
-  {% include valine.html %}
-  {% endif %}
-
-</div>
 <div class="post-tail-wrapper text-muted">
 
   <!-- categories -->
@@ -126,8 +116,17 @@ tail_includes:
       {{- tag -}}
     </a>
     {% endfor %}
+<!--    {% include waline.html %}-->
   </div>
   {% endif %}
+
+
+
+      <div class="container">
+    {% include waline.html %}
+      </div>
+
+
 
   <div class="post-tail-bottom
     d-flex justify-content-between align-items-center mt-3 pt-5 pb-2">

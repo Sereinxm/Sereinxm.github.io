@@ -50,3 +50,7 @@ polyfill:
 mathjax:
   js: /assets/lib/mathjax/tex-chtml.js
 
+waline:
+  js: /assets/lib/client/dist/waline.js
+  css: /assets/lib/client/dist/waline.css
+  emojis: /assets/lib/emojis
