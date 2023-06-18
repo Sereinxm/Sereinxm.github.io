@@ -1,14 +1,25 @@
-<script src="https://unpkg.com/@waline/client@v2/dist/waline.mjs"></script>
-<link
-  rel="stylesheet"
-  href="https://unpkg.com/@waline/client@v2/dist/waline.css"
-/>
+<head>
+  <!-- ... -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/@waline/client@v2/dist/waline.css"
+  />
+  <!-- ... -->
+</head>
+<body>
+<!-- ... -->
 <div id="waline"></div>
-<script>
+<script type="module">
   import { init } from 'https://unpkg.com/@waline/client@v2/dist/waline.mjs';
 
   init({
     el: '#waline',
-    serverURL: 'https://waline.qwemyxuexi.top',
+    dark:'auto',
+    commentSorting:'latest',
+    login:'enable',
+    wordLimit: 300,
+    copyright:false,
+    serverURL: 'https://waline.qwemyxuexi.top/',
   });
 </script>
+</body>
